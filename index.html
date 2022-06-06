@@ -5,25 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+      body{
+        width: 960px;
+        margin: 10px auto;
+      }
+      ul{
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        padding: 10px;
+        margin-bottom: 50px;
+        border: 1px solid #0000ff;
+      }
+      li:hover{
+        cursor: pointer;
+      }
+      li img {
+        width: 100px;
+        height: 120px;
+      }
+      .fav{
+        background-color:antiquewhite;
+      }
+    </style>
   </head>
   <body>
     <h1>Hello HTML</h1>
     <div id="app">
-      <button @click="ToggleShowBooks">
-        <span v-if="showBooks">Hide Book</span>
-        <span v-else>Show Book</span>
-      </button>
-      <div class="" v-show="showBooks">Currently showing..</div>
-
       <div v-if="showBooks">
-        <h1>{{ title }}</h1>
-        <h2>{{ author }}</h2>
-        <h3>{{ age }}</h3>
-
-        <button @click="age++">Increase age</button>
-        <button @click="age--">Decrease age</button>
-        <button @click="changeTitle('Amar bangla')">New title</button>
+        <ul>
+          <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+            <img
+              :src="book.img"
+              :alt="book.title"
+            />
+            <h3>{{ book.title }}</h1>
+            <p>{{ book.author }}</h2>
+          </li>
+        </ul>
       </div>
+      <button @click="ToggleShowBooks">
+        <span v-if="showBooks">Hide books</span>
+        <span v-else>Show books</span>
+      </button>
     </div>
     <script src="./app.js"></script>
   </body>

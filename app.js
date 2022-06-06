@@ -1,19 +1,42 @@
 const app = Vue.createApp({
   data() {
     return {
+      url: "https://hasnat.me",
       showBooks: true,
-      title: "title",
-      author: "Opu",
-      age: "33",
+      books: [
+        {
+          title: "Harry potter",
+          author: "J.K Rowling",
+          img: "assets/1.jpeg",
+          isFav: true,
+        },
+        {
+          title: "Harry potter",
+          author: "J.K Rowling",
+          img: "assets/2.jpeg",
+          isFav: false,
+        },
+        {
+          title: "Harry potter",
+          author: "J.K Rowling",
+          img: "assets/3.jpeg",
+          isFav: true,
+        },
+        {
+          title: "Harry potter",
+          author: "J.K Rowling",
+          img: "assets/4.jpeg",
+          isFav: false,
+        },
+      ],
     };
   },
   methods: {
-    changeTitle(title) {
-      //this.title = "new Title";
-      this.title = title;
-    },
     ToggleShowBooks() {
       this.showBooks = !this.showBooks;
+    },
+    toggleFav(book) {
+      book.isFav = !book.isFav;
     },
   },
 });
