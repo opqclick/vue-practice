@@ -9,13 +9,17 @@
   <body>
     <h1>Hello HTML</h1>
     <div id="app">
-      <h1>{{ title }}</h1>
-      <h2>{{ author }}</h2>
-      <h3>{{ age }}</h3>
+      <button @click="showBooks">Hide Book</button>
 
-      <button @click="age++">Increase age</button>
-      <button @click="age--">Decrease age</button>
-      <button @click="changeTitle('Amar bangla')">New title</button>
+      <div v-if="showBooks">
+        <h1>{{ title }}</h1>
+        <h2>{{ author }}</h2>
+        <h3>{{ age }}</h3>
+
+        <button @click="age++">Increase age</button>
+        <button @click="age--">Decrease age</button>
+        <button @click="changeTitle('Amar bangla')">New title</button>
+      </div>
     </div>
     <script src="./app.js"></script>
   </body>
