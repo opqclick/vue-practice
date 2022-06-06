@@ -12,6 +12,9 @@ const app = Vue.createApp({
       //this.title = "new Title";
       this.title = title;
     },
+    ToggleShowBooks() {
+      this.showBooks = !this.showBooks;
+    },
   },
 });
 

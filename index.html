@@ -9,7 +9,10 @@
   <body>
     <h1>Hello HTML</h1>
     <div id="app">
-      <button @click="showBooks">Hide Book</button>
+      <button @click="ToggleShowBooks">
+        <span v-if="showBooks">Hide Book</span>
+        <span v-if="!showBooks">Show Book</span>
+      </button>
 
       <div v-if="showBooks">
         <h1>{{ title }}</h1>
