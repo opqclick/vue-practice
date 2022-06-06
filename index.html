@@ -11,7 +11,7 @@
     <div id="app">
       <button @click="ToggleShowBooks">
         <span v-if="showBooks">Hide Book</span>
-        <span v-if="!showBooks">Show Book</span>
+        <span v-else>Show Book</span>
       </button>
 
       <div v-if="showBooks">
